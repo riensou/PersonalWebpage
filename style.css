@@ -70,7 +70,7 @@ strong { font-weight: (--fw-bold);}
 
 /* Buttons */
 
-.btn {
+.education__btn {
     display: inline-block;
     padding: .5em 2.5em;
     background: var(--clr-accent);
@@ -84,7 +84,43 @@ strong { font-weight: (--fw-bold);}
     transition: transform 200ms ease-in-out;
 }
 
-.btn:hover {
+.education__btn:hover {
+    transform: scale(1.1);
+}
+
+.projects__btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.projects__btn:hover {
+    transform: scale(1.1);
+}
+
+.music__btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.music__btn:hover {
     transform: scale(1.1);
 }
 
@@ -121,7 +157,8 @@ h3 { font-size: var(--fs-h3)}
 
 .section__subtitle--intro,
 .section__subtitle--about,
-.section__subtitle--music {
+.section__subtitle--music,
+.section__subtitle--projects {
     background: var(--clr-accent);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
@@ -227,6 +264,8 @@ nav {
     }
 }
 
+/* About Me Section */
+
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
@@ -258,3 +297,143 @@ nav {
     }
 }
 
+/* My Projects Section */
+
+.section__title--projects {
+    text-align: center;
+}
+
+.my-projects {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects__img {
+    box-shadow: var(--bs);
+}
+
+.projects__body {
+    text-align: center;
+}
+
+.projects__text {
+    text-align: left;
+}
+
+.projects__btn {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+    .my-projects {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--projects {
+        grid-area: title;
+    }
+
+    .projects__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* My Music Section */
+
+.section__title--music {
+    text-align: center;
+}
+
+.my-music {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.music__img {
+    text-align: center;
+    box-shadow: var(--bs);
+}
+
+.music__body {
+    text-align: center;
+}
+
+.music__text {
+    text-align: left;
+}
+
+.music__btn {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+    .my-music {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--music {
+        grid-area: title;
+    }
+
+    .music__img {
+        text-align: ce;
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* My Library */
+
+.my-library {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--library {
+    color: var(--clr-accent);
+    margin-bottom: 2em;
+    font-family: var(--ff-secondary);
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.library__item {
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+
+.library__img {
+    transform: scale(1.11);
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), 
+    opacity 250ms linear;
+}
+
+.library__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.library__img:hover,
+.library__item:focus .library__img {
+    transform: scale(1.2);
+    opacity: .75;
+}
